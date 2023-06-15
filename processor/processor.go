@@ -68,8 +68,6 @@ func (p *ImageProcessor) ProcessImages(urls []string, workers int, savePath stri
 	for result := range resultChan {
 		results[result.url] = result.hash
 
-		filePath := fmt.Sprintf("%s/%s.jpg", savePath, result.hash)
-
 		content, err := p.Downloader.Download(result.url)
 		if err != nil {
 			fmt.Printf("Error downloading image from %s: %s\n", result.url, err.Error())
@@ -77,7 +75,7 @@ func (p *ImageProcessor) ProcessImages(urls []string, workers int, savePath stri
 		}
 		defer content.Close()
 
-		err = p.ImageSaver.Save(filePath, content)
+		err = p.ImageSaver.Save(result.hash, savePath, content)
 		if err != nil {
 			fmt.Printf("Error saving image from %s: %s\n", result.url, err.Error())
 			continue
