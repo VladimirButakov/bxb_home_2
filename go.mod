@@ -1,3 +1,3 @@
-module example.com/m/v2
+module github.com/VladimirButakov/bxb_home_2
 
 go 1.20

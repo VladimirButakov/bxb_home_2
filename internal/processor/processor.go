@@ -1,10 +1,10 @@
 package processor
 
 import (
-	"example.com/m/v2/downloader"
-	"example.com/m/v2/hash"
-	"example.com/m/v2/saver"
 	"fmt"
+	"github.com/VladimirButakov/bxb_home_2/internal/downloader"
+	"github.com/VladimirButakov/bxb_home_2/internal/hash"
+	"github.com/VladimirButakov/bxb_home_2/internal/saver"
 	"sync"
 )
 

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"example.com/m/v2/processor"
 	"fmt"
+	"github.com/VladimirButakov/bxb_home_2/internal/processor"
 )
 
 func main() {
