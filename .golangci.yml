@@ -1,0 +1,59 @@
+linters:
+  disable-all: true
+  enable:
+    - deadcode
+    - depguard
+    - dogsled
+    - dupl
+    - errcheck
+    - gochecknoinits
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofmt
+    - goimports
+    - goprintffuncname
+    - gosimple
+    - govet
+    - ineffassign
+    - misspell
+    - nakedret
+    - staticcheck
+    - stylecheck
+    - unconvert
+    - unparam
+    - unused
+    - varcheck
+    - whitespace
+#    - typecheck
+#    - lll
+
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  gofmt:
+    simplify: false
+  gocritic:
+    disabled-checks:
+      - ifElseChain
+  gocyclo:
+    max-complexity: 15
+  lll:
+    line-length: 140
+
+issues:
+  max-same-issues: 0
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - dupl
+        - errcheck
+        - lll
+
+run:
+  modules-download-mode: readonly
+  skip-dirs:
+    - pkg
+  concurrency: 4
+  timeout: 5m
