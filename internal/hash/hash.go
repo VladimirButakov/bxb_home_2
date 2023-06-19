@@ -6,7 +6,7 @@ import (
 	"io"
 )
 
-type HashCalculator interface {
+type Calculator interface {
 	CalculateHash(content io.Reader) (string, error)
 }
 
